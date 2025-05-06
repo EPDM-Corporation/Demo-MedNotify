@@ -4,20 +4,19 @@
     box-sizing: border-box;
   }
   
-  body {
+  section {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2f2f2;
+    gap: 500px;
   }
   
   .ESP32 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+
   }
   
   .ESP32BG {
@@ -124,19 +123,149 @@
   #white:hover{
     background-color: gray;
   }
-  /* .buttons button {
-    width: 70px;
-    height: 40px;
-    border-radius: 8px;
-    background-color: #c27e69;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    transition: background 0.3s ease;
+
+  .dashboard {
+    width: 600px;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 5px 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #notification{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #notification, #config {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
   }
   
-  .buttons button:hover {
-    background-color: #a85e4b;
+  #notification h2, #config h2 {
+    margin-bottom: 10px;
+    color: #333;
   }
-   */
+  
+  #notiList {
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    padding-left: 10px;
+  }
+  
+  #notiList li {
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    background-color: #d3ecff;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+  
+  #config{
+    padding: 30px;
+    display: flex;
+  }
+  #config > *{
+    padding: 10px;
+  }
+
+  /* SETA ANIMAÇÃO */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+    cursor: pointer;
+    display: none;
+  }
+  
+  .arrow span {
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate1 2s infinite;
+  }
+  
+  .arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  
+  .arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+  
+  @keyframes animate1 {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+  
+  .arrow2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    cursor: pointer;
+    display: none;
+  }
+  
+  .arrow2 span {
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate2 2s infinite;
+  }
+  
+  .arrow2 span:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  
+  .arrow2 span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+  
+  @keyframes animate2 {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+
+  #arrowFlex{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+  }
